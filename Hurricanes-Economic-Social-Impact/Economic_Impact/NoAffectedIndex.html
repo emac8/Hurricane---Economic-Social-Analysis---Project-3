@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet Map with GeoJSON</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 80vh;
+            width: 100%;
+        }
+        #filter {
+            padding: 10px;
+            background-color: #fff;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        .info.legend {
+            background: white;
+            border: 2px solid black;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .info.legend i {
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="filter">
+        <h4>Filter by Number of People Affected</h4>
+        <label><input type="checkbox" class="affected-filter" data-max="50000" checked> 50,000 or less</label><br>
+        <label><input type="checkbox" class="affected-filter" data-max="250000" checked> 50,001 - 250,000</label><br>
+        <label><input type="checkbox" class="affected-filter" data-max="500000" checked> 250,001 - 500,000</label><br>
+        <label><input type="checkbox" class="affected-filter" data-max="Infinity" checked> More than 500,000</label>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="NoAffectedLogic.js"></script>
+</body>
+</html>
